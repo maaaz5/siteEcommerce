@@ -4,7 +4,6 @@
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 62.5%;
 }
 
 :root {
@@ -78,4 +77,8 @@
 
   /*==>  models */
   --shadowModel: 0px 2px 32px rgba(0, 0, 0, 0.15);
+}
+
+html {
+  font-size: 62.5%;
 }
