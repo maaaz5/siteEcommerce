@@ -1,0 +1,81 @@
+*,
+::after,
+::before {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+
+:root {
+  /* TextStyles */
+  --S1: 3.2rem;
+  --S2: 2.6rem;
+  --S3: 2.2rem;
+  --S4: 1.8rem;
+  --S5: 1.5rem;
+  --S6: 1.2rem;
+
+  /*==> button */
+  --btnFontSize: 1.5rem;
+
+  /*==>  lead */
+  --lead: 1.7rem;
+
+  /*==>  body */
+  --body: 1.4rem;
+
+  /*==>  caption */
+  --caption: 1.2rem;
+
+  /* Colors */
+
+  /*==>  BLUE */
+  --blueA: #19b2b8;
+  --blueB: #37d0d6;
+  --blueC: #7cd0d3;
+  --blueD: #b9e6e8;
+  --blueE: #ecf6f6;
+
+  /*==>  ORANGE */
+  --orangeA: #c7522d;
+  --orangeB: #e5704b;
+  --orangeC: #eb8d70;
+  --orangeD: #f7c6b7;
+  --orangeE: #fff1ed;
+
+  /*==>  BROWN */
+  --brownA: #b28a48;
+  --brownB: #d0a866;
+  --brownC: #ecd2a6;
+  --brownD: #faedd8;
+  --brownE: #fff9f0;
+
+  /*==>  GREEN */
+  --greenA: #46760a;
+  --greenB: #6a983c;
+  --greenC: #92c064;
+  --greenD: #c8deb3;
+  --greenE: #f4f8ec;
+
+  /*==>  BLACK */
+  --blackA: #151515;
+  --blackB: #575757;
+  --blackC: #a9a9a9;
+  --blackD: #d1d1d1;
+  --blackE: #ebebeb;
+  --blackF: #f5f5f5;
+  --blackH: #f9f9f9;
+  --blackJ: #ffffff;
+  --blackI: #fdfdfd;
+
+  /*==>  Gradients */
+  --g1: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+
+  /* shadows */
+  --shadow1: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  --shadow1: 0px 1px 2px rgba(0, 0, 0, 0.25);
+
+  /*==>  models */
+  --shadowModel: 0px 2px 32px rgba(0, 0, 0, 0.15);
+}
