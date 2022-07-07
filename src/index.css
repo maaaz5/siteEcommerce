@@ -5,12 +5,17 @@
   margin: 0;
   padding: 0;
 }
+/* general styling */
 html {
   font-size: 62.5%;
 }
-div {
-  margin: 20rem;
+ul {
+  list-style-type: none;
 }
+a {
+  text-decoration: none;
+}
+
 :root {
   /* TextStyles */
   --S1: 3.2rem;
