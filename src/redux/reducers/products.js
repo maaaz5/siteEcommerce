@@ -2,6 +2,9 @@ import ACTION_TYPES from "../constants/actionTypes";
 
 const initialState = {
   products: [],
+  product: null,
+  cateogries: [],
+  category: null,
 };
 
 const reducer = (state = initialState, action = {}) => {
