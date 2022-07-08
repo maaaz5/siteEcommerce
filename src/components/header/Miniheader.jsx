@@ -1,26 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+import { InnerWrapper } from "../../Styles/styles/globalStyles";
 
 const Miniheader = () => {
   return (
-    <Header>
-      <div>
-        <p>Chat with us</p>
-        <p>+420 336 775 664</p>
-        <p>exemple@exemple.com</p>
-      </div>
-      <ul>
-        <li>
-          <a href="#">Blog</a>
-        </li>
-        <li>
-          <a href="#">About Us</a>
-        </li>
-        <li>
-          <a href="#">Careers</a>
-        </li>
-      </ul>
-    </Header>
+    <InnerWrapper>
+      <Header>
+        <div>
+          <p>Chat with us</p>
+          <p>+420 336 775 664</p>
+          <p>exemple@exemple.com</p>
+        </div>
+        <ul>
+          <li>
+            <a href="#">Blog</a>
+          </li>
+          <li>
+            <a href="#">About Us</a>
+          </li>
+          <li>
+            <a href="#">Careers</a>
+          </li>
+        </ul>
+      </Header>
+    </InnerWrapper>
   );
 };
 const Header = styled.div`

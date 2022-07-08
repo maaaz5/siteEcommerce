@@ -1,29 +1,32 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "./../../../assests/logo.png";
+import logo from "./../../assests/logo.png";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { VscSearch } from "react-icons/vsc";
 import { AiOutlineUser, AiOutlineShopping } from "react-icons/ai";
+import { InnerWrapper } from "../../Styles/styles/globalStyles";
 
 const Header = () => {
   return (
-    <HeaderWrapper>
-      <img src={logo} alt="logo" />
-      <div>
-        <span className="caregories">
-          All categories <MdKeyboardArrowDown />
-        </span>
-        <input type="text" placeholder="Search Products, caregories ..." />
-        <span>
-          <VscSearch />
-        </span>
-      </div>
+    <InnerWrapper>
+      <HeaderWrapper>
+        <img src={logo} alt="logo" />
+        <div>
+          <span className="caregories">
+            All categories <MdKeyboardArrowDown />
+          </span>
+          <input type="text" placeholder="Search Products, caregories ..." />
+          <span>
+            <VscSearch />
+          </span>
+        </div>
 
-      <span>
-        <AiOutlineUser />
-        <AiOutlineShopping />
-      </span>
-    </HeaderWrapper>
+        <Icons>
+          <AiOutlineUser />
+          <AiOutlineShopping />
+        </Icons>
+      </HeaderWrapper>
+    </InnerWrapper>
   );
 };
 const HeaderWrapper = styled.div`
@@ -61,11 +64,17 @@ const HeaderWrapper = styled.div`
       }
     }
     input {
+      font-size: var(--S5);
       outline: none;
       border: none;
       background-color: var(--blackF);
       padding: 0rem 2rem;
     }
+  }
+`;
+const Icons = styled.span`
+  svg {
+    font-size: var(--S4);
   }
 `;
 export default Header;

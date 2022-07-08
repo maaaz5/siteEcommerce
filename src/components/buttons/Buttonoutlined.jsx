@@ -17,6 +17,7 @@ const Buttonoutlined = (props) => {
 };
 
 const ButtonOutline = styled.a`
+  display: inline-block;
   font-size: ${(props) => props.fontSize};
   background: ${(props) =>
     props.filled == "light"
@@ -32,10 +33,17 @@ const ButtonOutline = styled.a`
       : "var(--blackA)"};
 
   border-radius: 1.2rem;
-  border: ${(props) => (props.border ? "0.3rem solid var(--greenA)" : "")};
+  border: ${(props) => (props.border ? "0.3rem solid var(--greenB)" : "")};
   text-decoration: none;
-  padding: 1em 2em;
+  padding: 1rem 2rem;
   font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  resize: none;
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    transform: translateX(0.4rem);
+  }
 `;
 
 const LeftArr = styled.span`
