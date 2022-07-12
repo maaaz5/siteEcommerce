@@ -33,17 +33,13 @@ const ButtonOutline = styled.a`
       : "var(--blackA)"};
 
   border-radius: 1.2rem;
-  border: ${(props) => (props.border ? "0.3rem solid var(--greenB)" : "")};
+  border: ${(props) => (props.border ? "0.3rem solid var(--greenA)" : "")};
   text-decoration: none;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1.5rem;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
   position: relative;
   resize: none;
-  &:hover {
-    transition: all 0.3s ease-in-out;
-    transform: translateX(0.4rem);
-  }
 `;
 
 const LeftArr = styled.span`

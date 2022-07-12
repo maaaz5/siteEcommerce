@@ -6,16 +6,36 @@ import Header from "../../components/header/Header";
 import Navigation from "../../components/navigation/Navigation";
 import { Wrapper } from "../../Styles/styles/globalStyles";
 import TwoColumnBanner from "../../components/banner/TwoColumnBanner";
+import LeftSideNav from "../../components/leftSideNav/LeftSideNav";
+import TwoColDisplay from "../../components/twocoldisplay/TwoColDisplay";
+import { menu1 } from "../../data/data";
+import Product from "../../components/product/Product";
+import ThreeProducstRow from "../../components/product/ThreeProducstRow";
+import HeadlineSection from "../../components/headlineSection/HeadlineSection";
+import Footer from "../../components/footer/Footer";
 const Home = () => {
-  const productsState = useSelector((state) => state.products);
-  console.log(productsState);
+  const { products } = useSelector((state) => state.products);
+  console.log(products);
   return (
     <Wrapper>
       <HomeContainer>
         <Miniheader />
         <Header />
         <Navigation />
-        <TwoColumnBanner />
+        <TwoColDisplay
+          left={<LeftSideNav links={menu1.links} title={menu1.hero} />}
+          right={<TwoColumnBanner />}
+        />
+        <TwoColDisplay
+          left={<LeftSideNav links={menu1.links} title={menu1.hero} />}
+          right={<ThreeProducstRow products={products} num="3" />}
+        />
+        <TwoColDisplay
+          left={<LeftSideNav links={menu1.links} title={menu1.hero} />}
+          right={<ThreeProducstRow products={products.reverse()} num="3" />}
+        />
+        <HeadlineSection products={products} Headline="Out Latest" />
+        <Footer />
       </HomeContainer>
     </Wrapper>
   );
