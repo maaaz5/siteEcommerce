@@ -11,7 +11,6 @@ export const Wrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 
-  background-color: var(--blackJ);
   @media screen and (max-width: 1300px) {
     width: 90%;
   }
@@ -23,6 +22,10 @@ export const Title = styled.p`
 `;
 
 export const SubTitle = styled.p`
-  font-size: var(--S6);
+  font-size: ${(props) => (props.medium ? "var(--S5)" : "var(--S6)")};
   font-weight: bold;
+`;
+
+export const Input = styled.input`
+  accent-color: var(--greenB) !important;
 `;

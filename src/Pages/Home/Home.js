@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 
-import Miniheader from "../../components/header/Miniheader";
-import Header from "../../components/header/Header";
-import Navigation from "../../components/navigation/Navigation";
 import { Wrapper } from "../../Styles/styles/globalStyles";
 import TwoColumnBanner from "../../components/banner/TwoColumnBanner";
 
@@ -15,9 +12,6 @@ const Home = () => {
   return (
     <Wrapper>
       <HomeContainer>
-        <Miniheader />
-        <Header />
-        <Navigation />
         <TwoColumnBanner />
         <span>{products.map((item) => item.title)}</span>
       </HomeContainer>

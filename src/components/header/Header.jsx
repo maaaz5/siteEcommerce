@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import logo from "./../../assests/logo.png";
 import { MdKeyboardArrowDown } from "react-icons/md";
@@ -6,15 +6,36 @@ import { VscSearch } from "react-icons/vsc";
 import { AiOutlineUser, AiOutlineShopping } from "react-icons/ai";
 import { InnerWrapper } from "../../Styles/styles/globalStyles";
 
+import { useSelector, useDispatch } from "react-redux";
+
+import { setCurrentCategory } from "../../redux/actions/products";
+
 const Header = () => {
+  const { categories } = useSelector((state) => state.products);
+
+  const dispatch = useDispatch();
+
+  function handleChange(category) {
+    dispatch(setCurrentCategory(category));
+  }
+
   return (
     <InnerWrapper>
       <HeaderWrapper>
         <img src={logo} alt="logo" />
         <div>
-          <span className="caregories">
-            All categories <MdKeyboardArrowDown />
-          </span>
+          <select
+            className="caregories"
+            onChange={(e) => handleChange(categories[e.target.selectedIndex])}
+          >
+            {categories.map((c) => {
+              return (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              );
+            })}
+          </select>
           <input type="text" placeholder="Search Products, caregories ..." />
           <span>
             <VscSearch />
@@ -35,18 +56,26 @@ const HeaderWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  span {
+
+  select,
+  option {
+    background: transparent;
+    padding: 5px 10px;
     display: flex;
     align-items: center;
     gap: 0rem 0.9rem;
     font-size: var(--S5);
     font-weight: 700;
     cursor: pointer;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
   }
   div {
     background-color: var(--blackF);
     display: flex;
     flex-direction: row;
+    align-items: center;
     border-radius: 0.6rem;
     padding: 0.5rem 2rem;
     border: 1px solid var(--blackD);
