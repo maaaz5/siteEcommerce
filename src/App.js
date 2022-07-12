@@ -9,6 +9,8 @@ import ProductDetails from "./Pages/ProductDetails/ProductDetails.js";
 import Miniheader from "./components/header/Miniheader";
 import Header from "./components/header/Header";
 import Navigation from "./components/navigation/Navigation";
+import Footer from "./components/footer/Footer";
+import Tags from "./components/footer/Tags";
 
 import { fillProducts, setCatgeories } from "./redux/actions/products";
 import { Wrapper } from "./Styles/styles/globalStyles";
@@ -48,6 +50,7 @@ function App() {
           <Route path="/category/:categoryName" element={<Category />} />
           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
+        <Footer />
       </Router>
     </Wrapper>
   );

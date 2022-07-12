@@ -10,6 +10,7 @@ import categories from "../../data/categories";
 import brands from "../../data/brands";
 
 import Rating from "../Rating/Rating";
+import Buttonoutlined from "../buttons/Buttonoutlined";
 
 const Filter = () => {
   const [rating, setRating] = useState(null);
@@ -69,9 +70,17 @@ const Filter = () => {
           valueLabelDisplay="auto"
         />
       </Price>
+      <Buttons>
+        <Buttonoutlined title="Apply" filled border />
+        <Buttonoutlined title="Reset" />
+      </Buttons>
     </FilterWrapper>
   );
 };
+
+const Buttons = styled.div`
+  margin: 4rem 2rem;
+`;
 
 const FilterWrapper = styled.aside`
   display: flex;

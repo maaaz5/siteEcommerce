@@ -4,12 +4,10 @@ import { InnerWrapper } from "../../Styles/styles/globalStyles";
 import Banner from "./Banner";
 const TwoColumnBanner = () => {
   return (
-    <InnerWrapper>
-      <TwoCol>
-        <Banner subtitle="hello" title="hello" />
-        <Banner subtitle="hello" title="hello" />
-      </TwoCol>
-    </InnerWrapper>
+    <TwoCol>
+      <Banner subtitle="hello" title="hello" />
+      <Banner subtitle="hello" title="hello" />
+    </TwoCol>
   );
 };
 const TwoCol = styled.div`
@@ -17,6 +15,7 @@ const TwoCol = styled.div`
   flex-direction: row;
   justify-content: space-between;
   gap: 0rem 4rem;
+  width: 75%;
   div {
     flex-grow: 1;
   }

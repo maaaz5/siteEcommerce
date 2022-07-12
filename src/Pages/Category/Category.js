@@ -4,11 +4,15 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Box from "../../components/Box/Box.jsx";
 import Filter from "../../components/Filter/Filter";
+import Product from "../../components/product/Product.jsx";
+import ThreeProducstRow from "../../components/product/ThreeProducstRow.jsx";
 
 import { Title, Wrapper } from "../../Styles/styles/globalStyles";
 
 const Category = () => {
-  const { currentCategory } = useSelector((state) => state.products);
+  const { currentCategory, products } = useSelector((state) => state.products);
+
+  console.log(products);
   return (
     <Wrapper>
       <CategoryContainer>
@@ -17,15 +21,21 @@ const Category = () => {
           <FilterControllers></FilterControllers>
         </CategoryHeader>
         <CategoryProductsAndFilter>
-          <CategoryProducts></CategoryProducts>
           <Filter />
+          <CategoryProducts>
+            {/* <ThreeProducstRow products={products} num={4} /> */}
+            {/* Here goes the products */}
+          </CategoryProducts>
         </CategoryProductsAndFilter>
       </CategoryContainer>
     </Wrapper>
   );
 };
 
-const CategoryProducts = styled.div``;
+const CategoryProducts = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const CategoryProductsAndFilter = styled.div`
   display: flex;
