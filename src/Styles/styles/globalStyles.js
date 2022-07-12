@@ -10,7 +10,6 @@ export const InnerWrapper = styled.div`
 export const Wrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-
   background-color: var(--blackJ);
   @media screen and (max-width: 1300px) {
     width: 90%;

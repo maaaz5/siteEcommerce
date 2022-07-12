@@ -8,6 +8,8 @@ import Category from "./Pages/Category/Category";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails.js";
 
 import { fillProducts } from "./redux/actions/products";
+import Checkout from "./Pages/Checkout/Checkout";
+import Miniheader from "./components/header/Miniheader";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -34,6 +36,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/category/:categoryName" element={<Category />} />
           <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Router>
     </>
