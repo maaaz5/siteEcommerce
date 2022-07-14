@@ -8,6 +8,7 @@ const Buttonoutlined = (props) => {
       href={props.url}
       fontSize={props.fontSize}
       border={props.border}
+      onClick={props.onClick}
     >
       <LeftArr left={props.left}>&#60;</LeftArr>
       {props.title}
@@ -40,6 +41,7 @@ const ButtonOutline = styled.a`
   transition: all 0.3s ease-in-out;
   position: relative;
   resize: none;
+  cursor: pointer;
 `;
 
 const LeftArr = styled.span`

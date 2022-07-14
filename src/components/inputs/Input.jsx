@@ -27,6 +27,7 @@ const grey = {
 const StyledInputRoot = stls("div")(
   ({ theme }) => `
   display: flex;
+  width: 100%;
   font-weight: 500;
   border: 1px solid var(--blackD);
   border-radius: 1rem;
@@ -56,8 +57,9 @@ const StyledInputElement = stls("input")(
   background: inherit;
   border: none;
   border-radius: inherit;
-  padding: 1rem 1.2rem;
+  padding: 0.9rem 1.2rem;
   outline: 0;
+  
 `
 );
 
@@ -84,14 +86,18 @@ const CustomInput = React.forwardRef(function CustomInput(props, ref) {
   );
 });
 
-const Inuput = () => {
+const Inuput = (props) => {
   return (
     <InputWraper>
-      <InputLabel htmlFor="dummy">Text Label</InputLabel>
+      <InputLabel htmlFor={props.id}>{props.label}</InputLabel>
       <CustomInput
-        id="dummy"
-        startAdornment={<InputAdornment>kg</InputAdornment>}
-        placeholder="dummy text "
+        id={props.id}
+        type={props.type}
+        // icon can also be text
+        startAdornment={
+          props.icon ? <InputAdornment>{props.icon}</InputAdornment> : ""
+        }
+        placeholder={props.placeholder}
       />
     </InputWraper>
   );
@@ -100,6 +106,7 @@ const InputWraper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 `;
 const InputLabel = styled.label`
   font-size: var(--S6);

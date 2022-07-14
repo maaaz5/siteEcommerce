@@ -35,6 +35,7 @@ const Breadcrumb = (props) => {
   );
 };
 const BreadWrapper = styled.div`
+  margin: 2rem 0rem;
   nav {
     .sp {
       font-size: var(--caption);
