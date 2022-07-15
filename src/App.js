@@ -15,6 +15,10 @@ import Checkout from "./Pages/Checkout/Checkout";
 import Miniheader from "./components/header/Miniheader";
 import { fillProducts, setCatgeories } from "./redux/actions/products";
 import { Wrapper } from "./Styles/styles/globalStyles";
+import CartProduct from "./components/cartProduct/CartProduct";
+import Register from "./Pages/Register/Register";
+import Login from "./Pages/login/Login";
+import ProductInfo from "./Pages/Details/Details";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -43,16 +47,20 @@ function App() {
   return (
     <Wrapper>
       <Router>
-        <Miniheader />
+        {/* <Miniheader />
         <Header />
-        <Navigation />
+        <Navigation /> */}
+        {/* <CartProduct name="Jacket noir" price="40" /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/category/:categoryName" element={<Category />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/detail" element={<ProductInfo />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </Wrapper>
   );

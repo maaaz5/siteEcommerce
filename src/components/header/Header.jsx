@@ -9,6 +9,7 @@ import { InnerWrapper } from "../../Styles/styles/globalStyles";
 import { useSelector, useDispatch } from "react-redux";
 
 import { setCurrentCategory } from "../../redux/actions/products";
+import Cart from "../cart/Cart";
 
 const Header = () => {
   const { categories } = useSelector((state) => state.products);
@@ -23,7 +24,7 @@ const Header = () => {
     <InnerWrapper>
       <HeaderWrapper>
         <img src={logo} alt="logo" />
-        <div>
+        <div className="inputCategory">
           <select
             className="caregories"
             onChange={(e) => handleChange(categories[e.target.selectedIndex])}
@@ -44,12 +45,29 @@ const Header = () => {
 
         <Icons>
           <AiOutlineUser />
-          <AiOutlineShopping />
+          <CartNuser>
+            <AiOutlineShopping />
+            <Cart />
+          </CartNuser>
         </Icons>
       </HeaderWrapper>
     </InnerWrapper>
   );
 };
+const CartNuser = styled.div`
+  position: relative;
+  &:hover .cartt {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem 0rem;
+    z-index: 10;
+  }
+  .cartt {
+    right: 0;
+    position: absolute;
+    display: none;
+  }
+`;
 const HeaderWrapper = styled.div`
   margin-top: 2rem;
   display: flex;
@@ -71,7 +89,7 @@ const HeaderWrapper = styled.div`
     border: none;
     text-transform: capitalize;
   }
-  div {
+  .inputCategory {
     background-color: var(--blackF);
     display: flex;
     flex-direction: row;
@@ -102,6 +120,7 @@ const HeaderWrapper = styled.div`
   }
 `;
 const Icons = styled.span`
+  display: flex;
   svg {
     font-size: var(--S4);
   }

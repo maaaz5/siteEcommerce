@@ -6,16 +6,14 @@ import { menus } from "../../data/data";
 import Tags from "./Tags";
 const Footer = () => {
   return (
-    <InnerWrapper>
-      <Footers>
-        <Lists>
-          {menus.map((lis) => (
-            <List title={lis.hero} links={lis.links} />
-          ))}
-        </Lists>
-        <Tags />
-      </Footers>
-    </InnerWrapper>
+    <Footers>
+      <Lists>
+        {menus.map((lis) => (
+          <List title={lis.hero} links={lis.links} />
+        ))}
+      </Lists>
+      <Tags />
+    </Footers>
   );
 };
 const Lists = styled.div`

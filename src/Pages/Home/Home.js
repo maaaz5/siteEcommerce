@@ -15,12 +15,17 @@ import Footer from "../../components/footer/Footer";
 import Miniheader from "../../components/header/Miniheader";
 import Header from "../../components/header/Header";
 import Navigation from "../../components/navigation/Navigation";
+import Cart from "../../components/cart/Cart";
+
 const Home = () => {
   const { products } = useSelector((state) => state.products);
   console.log(products);
   return (
     <Wrapper>
       <HomeContainer>
+        <Miniheader />
+        <Header />
+        <Navigation />
         <TwoColDisplay
           left={<LeftSideNav links={menu1.links} title={menu1.hero} />}
           right={<TwoColumnBanner />}
@@ -34,6 +39,7 @@ const Home = () => {
           right={<ThreeProducstRow products={products.reverse()} num="3" />}
         />
         <HeadlineSection products={products} Headline="Out Latest" />
+        <Footer />
       </HomeContainer>
     </Wrapper>
   );

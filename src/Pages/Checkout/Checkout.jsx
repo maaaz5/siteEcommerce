@@ -15,9 +15,16 @@ import safe from "./../../assests/safe.png";
 import AcordationRadio from "./../../components/inputs/acordationRadio";
 import CheckboxInput2 from "../../components/inputs/CheckboxInput2";
 import Buttonoutlined from "./../../components/buttons/Buttonoutlined";
+import Miniheader from "../../components/header/Miniheader";
+import Header from "../../components/header/Header";
+import Navigation from "../../components/navigation/Navigation";
+import Footer from "../../components/footer/Footer";
 const Checkout = () => {
   return (
     <Wrapper>
+      <Miniheader />
+      <Header />
+      <Navigation />
       <InnerWrapper>
         <Breadcrumb />
         <StepUnno>
@@ -86,6 +93,7 @@ const Checkout = () => {
           </Row>
         </StepUnno>
       </InnerWrapper>
+      <Footer />
     </Wrapper>
   );
 };
