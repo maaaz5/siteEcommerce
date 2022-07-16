@@ -88,11 +88,14 @@ const LeftWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+
   .fonctionallities {
     p {
       display: flex;
       align-items: center;
       gap: 0rem 0.4rem;
+      font-size: var (--caption);
+      font-weight: 500;
     }
   }
 `;
@@ -100,6 +103,7 @@ const ProcutWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: 0rem 2rem;
+  margin: 2.5rem 0rem;
 `;
 const PriceWrapper = styled.div`
   font-weight: 600;
@@ -154,6 +158,7 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 0.5rem 0rem;
+  flex-grow: 1;
 
   h3 {
     font-size: var(--S5);

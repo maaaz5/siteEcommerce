@@ -11,11 +11,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { setCurrentCategory } from "../../redux/actions/products";
 import Cart from "../cart/Cart";
 
-const Header = () => {
+const Header = (props) => {
   const { categories } = useSelector((state) => state.products);
-
   const dispatch = useDispatch();
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  function handleIsOpen() {
+    setIsOpen(true);
+  }
   function handleChange(category) {
     dispatch(setCurrentCategory(category));
   }
@@ -45,29 +49,16 @@ const Header = () => {
 
         <Icons>
           <AiOutlineUser />
-          <CartNuser>
-            <AiOutlineShopping />
-            <Cart />
-          </CartNuser>
+          <div className={isOpen ? " cartnUser show" : "cartnUser hide"}>
+            <AiOutlineShopping onClick={handleIsOpen} />
+            <Cart isOpen={isOpen} />
+          </div>
         </Icons>
       </HeaderWrapper>
     </InnerWrapper>
   );
 };
-const CartNuser = styled.div`
-  position: relative;
-  &:hover .cartt {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem 0rem;
-    z-index: 10;
-  }
-  .cartt {
-    right: 0;
-    position: absolute;
-    display: none;
-  }
-`;
+
 const HeaderWrapper = styled.div`
   margin-top: 2rem;
   display: flex;
@@ -123,6 +114,29 @@ const Icons = styled.span`
   display: flex;
   svg {
     font-size: var(--S4);
+  }
+  .cartnUser {
+    position: relative;
+    /* .show {
+      .cartt {
+        opacity: 1 !important;
+      }
+    }
+    .hide {
+      .cartt {
+        opacity: 0 !important;
+      }
+    } */
+    .cartt {
+      display: flex;
+      flex-direction: column;
+
+      z-index: 10;
+    }
+    .cartt {
+      right: 0;
+      position: absolute;
+    }
   }
 `;
 export default Header;

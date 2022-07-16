@@ -94,8 +94,19 @@ const Inuput = (props) => {
         id={props.id}
         type={props.type}
         // icon can also be text
+        endAdornment={
+          props.icon && props.side == "end" ? (
+            <InputAdornment>{props.icon}</InputAdornment>
+          ) : (
+            ""
+          )
+        }
         startAdornment={
-          props.icon ? <InputAdornment>{props.icon}</InputAdornment> : ""
+          props.icon && props.side == "start" ? (
+            <InputAdornment>{props.icon}</InputAdornment>
+          ) : (
+            ""
+          )
         }
         placeholder={props.placeholder}
       />

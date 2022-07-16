@@ -10,12 +10,19 @@ import ThreeProducstRow from "../../components/product/ThreeProducstRow.jsx";
 
 import { InnerWrapper, Title, Wrapper } from "../../Styles/styles/globalStyles";
 import Breadcrumb from "./../../components/breadcrumb/Breadcrumb";
+import Miniheader from "../../components/header/Miniheader.jsx";
+import Header from "../../components/header/Header.jsx";
+import Navigation from "../../components/navigation/Navigation.jsx";
+import Footer from "../../components/footer/Footer.jsx";
 const Category = () => {
   const { currentCategory, products } = useSelector((state) => state.products);
 
   console.log(products);
   return (
     <Wrapper>
+      <Miniheader />
+      <Header />
+      <Navigation />
       <InnerWrapper>
         <CategoryContainer>
           <Breadcrumb />
@@ -34,6 +41,7 @@ const Category = () => {
           </CategoryProductsAndFilter>
         </CategoryContainer>
       </InnerWrapper>
+      <Footer />
     </Wrapper>
   );
 };
